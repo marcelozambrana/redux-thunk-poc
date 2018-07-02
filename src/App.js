@@ -6,8 +6,9 @@ import thunk from 'redux-thunk'
 
 import logger from 'redux-logger'
 
-import { reducer } from './reducer'
+import reducer from './reducers/index'
 import Info from './Info'
+import UserAgent from './UserAgent'
 
 const store = createStore(
   reducer,
@@ -17,9 +18,10 @@ const store = createStore(
 class App extends Component {
   render() {
     return (
-      <Provider  store={store}>
+      <Provider store={store}>
         <div className="App">
           <Info />
+          <UserAgent />
         </div>
       </Provider>
     )
